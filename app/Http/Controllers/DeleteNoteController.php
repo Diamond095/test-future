@@ -16,9 +16,15 @@ class DeleteNoteController extends Controller
             return response()->json(['message' => 'Запись не найдена'], 404);
         }
         //Проверяем является ли запись пользователя
+<<<<<<< HEAD
        // if (auth()->id() != $note->id) {
         //    return response()->json(['message' => 'Это не ваша запись или же вы не авторизовались'], 401);
        // }
+=======
+       if (auth()->id() != $note->id) {
+            return response()->json(['message' => 'Это не ваша запись или же вы не авторизовались'], 401);
+        }
+>>>>>>> e15c2c2 (Initial commit)
         //Удаляем запись
         $note->delete();
     
